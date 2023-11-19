@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Yapısı</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        [class*="box-"] { /* *="box-" ile başlayan class isimleri işaret edilir */
+            border: 1px solid black;
+            text-align: center;
+            font-weight: bold;
+            background-color: #87CEFA;
+        }
+        .container{
+            display: grid;
+            grid-template-rows: 200px 200px 200px;
+            /* grid-template-rows: 3fr 1fr 1fr; */
+            /* grid-template-columns: 200px 200px 200px 200px; */
+            grid-template-columns: auto auto auto auto;
+            gap: 10px;
+        }
+        /* 10 nolu kutuyu 5 numaranın yerine taşımak için 
+        grid çizgieri referans alınır. Hedef yer 2-3 dikey 1-2 yatay çizgiler arası
+        olduğundan aşağıdaki kod yazılır */
+        .box-10 {
+            grid-row: 2/3;
+            grid-column: 1/2;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+    <div class="box-1">1</div>
+    <div class="box-2">2</div>
+    <div class="box-3">3</div>
+    <div class="box-4">4</div>
+    <div class="box-5">5</div>
+    <div class="box-6">6</div>
+    <div class="box-7">7</div>
+    <div class="box-8">8</div>
+    <div class="box-9">9</div>
+    <div class="box-10">10</div>
+    <div class="box-11">11</div>
+    <div class="box-12">12</div>
+    </div>
+</body>
+</html>

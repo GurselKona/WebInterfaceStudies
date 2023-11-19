@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Yapısı</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 36px;
+        }
+        [class*="box-"] { /* *="box-" ile başlayan class isimleri işaret edilir */
+            border: 1px solid black;
+            text-align: center;
+            font-weight: bold;
+            background-color: #87CEFA;
+        }
+        .container{
+            display: grid;
+            grid-template-rows: 70px 500px 100px;
+            grid-template-columns: 300px auto 300px;
+            gap: 5px;
+            grid-template-areas: "A A A"
+                                 "B C D"
+                                 "B E E";
+        }
+        /* kutuların yerleşmesi: ilk ve ikinci satırlar aynı işlevi görür. */
+        .box-header {
+            /* grid-column: 1/5; */
+            grid-area: A;
+        }
+        .box-menu {
+            /* grid-row: 2/4; */
+            grid-area: B;
+        }
+        .box-main {
+            /* grid-row: 2/3; */
+            grid-column: 2/span 2;
+            grid-area: C;
+        }
+        .box-right {
+            /* grid-row: 2/3; */
+            grid-area: D;
+        }
+        .box-footer {
+            /* grid-column: 2/5; */
+            grid-area: E;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+    <div class="box-header">Header</div>
+    <div class="box-menu">Menu</div>
+    <div class="box-main">İçerik</div>
+    <div class="box-right">Sağ Bar</div>
+    <div class="box-footer">Footer</div>
+    </div>
+</body>
+</html>
